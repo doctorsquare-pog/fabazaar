@@ -12,42 +12,32 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- User Name -->
+            <!-- Name -->
             <div>
-                <x-label for="name" :value="__('User Name')" />
+                <x-label for="name" :value="__('Name')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
-                <x-label for="email" :value="__('Email Address')" />
+                <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
-            <!-- Phone Number -->
+            <!-- Phone numbers -->
             <div class="mt-4">
-                <x-label for="phone_no" :value="__('Phone Number')" />
+                <x-label for="phone_no" :value="__('Phone No')" />
 
                 <x-input id="phone_no" class="block mt-1 w-full" type="text" name="phone_no" :value="old('phone_no')" required />
             </div>
 
-            <!-- User Address -->
+            <!-- Home/Street Address -->
             <div class="mt-4">
-                <x-label for="address" :value="__('Address')" />
+                <x-label for="address" :value="__('Home/Company/Mahallah Address')" />
 
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
-            </div>
-
-            <!-- User Category -->
-            <div class="mt-4">
-                <x-label for="role_id" value="{{ __('Register as:') }}"/>
-                <select name="role_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="customer">Customer</option>
-                    <option value="supplier">Supplier</option>
-                    <option value="admin">Admin</option>
-                </select>
             </div>
 
             <!-- Password -->
@@ -67,6 +57,15 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="role_id" value="{{ __('Register as:') }}"/>
+                <select name="role_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option value="customer">Customer</option>
+                    <option value="supplier">Supplier</option>
+                    <option value="admin">Admin</option>
+                </select>
             </div>
 
             <div class="flex items-center justify-end mt-4">
